@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <script src="js/login.js"></script>
     <style>
       .subHeader0_1 {
         background-color: rgb(63, 62, 62);
@@ -14,7 +15,7 @@
       .subHeader0_1_3,
       .subHeader0_1_4_0,
       .subHeader0_1_4_1 {
-        padding: 10px 40px;
+        padding: 10px 30px;
       }
       .body {
         -webkit-text-size-adjust: 100%;
@@ -23,15 +24,17 @@
         background: #000;
         max-width: 100%;
       }
-
       .subHeader0_1_4 {
-        position: absolute;
-        padding-left: 1500px;
+        position: flex;
+        padding-left: 100px;
       }
       .headerLogo {
         max-height: 100px;
         width: auto;
         padding: 10px 40px;
+      }
+      h1 {
+        text-align: center;
       }
     </style>
     <meta charset="UTF-8" />
@@ -56,12 +59,12 @@
             alt="RevMovies Logo"
             title="RevMovies"
           />
-          <button class="subHeader0_1_0" type="button">inicio</button>
+          <button class="subHeader0_1_0" type="button">Inicio</button>
           <button class="subHeader0_1_1" type="button">Peliculas</button>
           <button class="subHeader0_1_2" type="button">Series</button>
           <button class="subHeader0_1_3" type="button">Libros</button>
           <div class="subHeader0_1_4">
-            <button type="button" class="subHeader0_1_4_0">
+            <button type="button" class="subHeader0_1_4_0" onclick="login()">
               <img src="" alt="" /><span>Login</span>
             </button>
             <select class="subHeader0_1_4_1" name="LanguageSelect">
@@ -77,7 +80,12 @@
     <!--Título principal de la página-->
     <main>
       <article>
-        <section></section>
+        <section>
+          <h1>
+            Reviews de tus Peliculas, series y libros favoritos sin limites y
+            mucho mas
+          </h1>
+        </section>
       </article>
       <article>
         <section></section>
