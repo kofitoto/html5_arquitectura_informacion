@@ -39,18 +39,17 @@ header {
 
 }
 
-.registro {
-  text-align: right;
- 
-}
 
-nav {
-
+nav { 
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   text-align: center;
   padding: 50px 50px 0 0;
 }
 
-nav>a {
+
+.navbar>a {
   color: #ffffff;
   font-weight: 300;
   text-decoration: none;
@@ -59,8 +58,16 @@ nav>a {
 }
 
 
-nav>a:hover {
+.navbar>a:hover {
   text-decoration: underline;
+}
+
+.buttons>* {
+  border: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 header .texto-peliculas-header {
@@ -139,7 +146,7 @@ header .texto-peliculas-header {
 
 footer {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
-  background-color: darkblue;
+  background-color: rgb(108, 108, 233);
   padding-bottom: 30px;
 }
 
