@@ -1,67 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="ver películas, películas en línea, películas online, ver TV, TV en línea, TV online, series en línea, series online, ver series, películas en streaming, TV en streaming, streaming inmediato, ver en línea, ver online, películas, ver películas en España, ver TV en línea, ver TV online, sin descargas, películas de duración completa, películas completas"
+      name="keywords"
+    />
+    <!--Favicon y un titulo adecuado a la tematica seleccionada-->
+    <link rel="stylesheet" href="css\style_index.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <title>RevMovies</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    content="ver películas, películas en línea, películas online, ver TV, TV en línea, TV online, series en línea, series online, ver series, películas en streaming, TV en streaming, streaming inmediato, ver en línea, ver online, películas, ver películas en España, ver TV en línea, ver TV online, sin descargas, películas de duración completa, películas completas"
-    name="keywords" />
-  <!--Favicon y un titulo adecuado a la tematica seleccionada-->
-  <script src="js/login.js"></script>
-  <link rel=stylesheet href="css\style.css">
-
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-  <title>RevMovies</title>
-</head>
-
-<body>
-  <!--Encabezado: Logotipo o imagen representativa-->
-  <!--Menú de navegación: De momento puede ser ficticio-->
-  <header>
-    <nav>
-      <div></div>
-      <div class="navbar">
-      <a href="#">Inicio</a>
-      <a href="#">Peliculas</a>
-      <a href="#">Series</a>
-      <a href="#">Libros</a>
-    </div>
-    <div class="buttons">
-      <button class="iniciar-btn">Iniciar sesion</button>
-      <button class="registro-btn">Registrar</button>
-    </div>
-    </nav>
-    <section class="texto-peliculas-header">
-      <!--Título principal de la página-->
-      <h1>RevMovies: lugar donde encontrarás tus reviews favoritos y muchos mas🎭🎥📚 </h1>
-      <h2>Unete a la comunidad mas grande de cinefilos!</h2>
-    </section>
-    <div class="film-wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150"
-        preserveAspectRatio="none" style="height: 100%; width: 100%;">
-        <path d="M-0.00,50.10 C150.00,150.33 349.20,-50.10 500.00,50.10 L500.00,150.33 L-0.00,150.33 Z"
-          style="stroke: none; fill: #fff;"></path>
-      </svg></div>
-  </header>
-  <main>
-    <section class="contenedor-nuestro-ranking-peliculas">
-      <h2 class="titulo">Ranking peliculas mas vistas</h2>
-      <div class="contenedor-peliculas">
-        <img src="img/peliculas.png" alt="imagen conceptual de las peliculas" class="imagen-ranking-peliculas">
-        <div class="contenido-texto-peliculas">
-        <h3><span>1</span> Del revés 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
-        <h3><span>2</span> Gru 4. Mi villano favorito</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
-        <h3><span>3</span> Deadpool y Lobezno</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
-        <h3><span>4</span> Twisters</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
-        <h3><span>5</span> Vaiana 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
-        <h3><span>6</span> Un lugar tranquilo: Día uno</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
-        <!--<h3><span>7</span> Borderlands</h3>
+  <body>
+    <!--Encabezado: Logotipo o imagen representativa-->
+    <!--Menú de navegación: De momento puede ser ficticio-->
+    <header>
+      <nav>
+        <div></div>
+        <div class="navbar">
+          <a href="#">Inicio</a>
+          <a href="#">Peliculas</a>
+          <a href="#">Series</a>
+          <a href="#">Libros</a>
+        </div>
+        <div class="buttons">
+          <button class="iniciar-btn" id="logInPopupBtn">Iniciar sesion</button>
+          <button class="registro-btn" id="openPopupBtn">Registrar</button>
+        </div>
+      </nav>
+      <section class="texto-peliculas-header">
+        <!--Título principal de la página-->
+        <h1>
+          RevMovies: lugar donde encontrarás tus reviews favoritos y muchos
+          mas🎭🎥📚
+        </h1>
+        <h2>Unete a la comunidad mas grande de cinefilos!</h2>
+      </section>
+      <div class="film-wave" style="height: 150px; overflow: hidden">
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style="height: 100%; width: 100%"
+        >
+          <path
+            d="M-0.00,50.10 C150.00,150.33 349.20,-50.10 500.00,50.10 L500.00,150.33 L-0.00,150.33 Z"
+            style="stroke: none; fill: #fff"
+          ></path>
+        </svg>
+      </div>
+    </header>
+    <main>
+      <section class="contenedor-nuestro-ranking-peliculas">
+        <h2 class="titulo">Ranking peliculas mas vistas</h2>
+        <div class="contenedor-peliculas">
+          <img
+            src="img/peliculas.png"
+            alt="imagen conceptual de las peliculas"
+            class="imagen-ranking-peliculas"
+          />
+          <div class="contenido-texto-peliculas">
+            <h3><span>1</span> Del revés 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Sapiente, nihil.
+            </p>
+            <h3><span>2</span> Gru 4. Mi villano favorito</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Sapiente, nihil.
+            </p>
+            <h3><span>3</span> Deadpool y Lobezno</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Sapiente, nihil.
+            </p>
+            <h3><span>4</span> Twisters</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Sapiente, nihil.
+            </p>
+            <h3><span>5</span> Vaiana 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Sapiente, nihil.
+            </p>
+            <h3><span>6</span> Un lugar tranquilo: Día uno</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Sapiente, nihil.
+            </p>
+            <!--<h3><span>7</span> Borderlands</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
         <h3><span>8</span> Harold and the Purple Crayon</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
@@ -69,30 +99,116 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>
         <h3><span>10</span> Elio</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nihil.</p>-->
+          </div>
+        </div>
+      </section>
+
+      <section class="contenedor-nuestro-ranking-series">
+        <h2 class="titulo">Ranking series más vistas</h2>
+        <div class="contenedor-series">
+          <div class="collage-series">
+            <div class="serie-item">
+              <img
+                src="img/series/adolescencia.avif"
+                alt="Portada Adolescencia"
+              />
+              <div class="info-serie">
+                <h3><span>1</span> Adolescencia</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Sapiente, nihil.
+                </p>
+              </div>
+            </div>
+
+            <div class="serie-item">
+              <img src="img/series/Dahmer.avif" alt="Portada Dahmer" />
+              <div class="info-serie">
+                <h3>
+                  <span>2</span>Netflix Monstruo: La historia de Jeffrey Dahmer
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Sapiente, nihil.
+                </p>
+              </div>
+            </div>
+
+            <div class="serie-item">
+              <img src="img/series/TheCrown.avif" alt="Portada The Crown" />
+              <div class="info-serie">
+                <h3><span>3</span> The Crown</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Sapiente, nihil.
+                </p>
+              </div>
+            </div>
+
+            <div class="serie-item">
+              <img src="img/series/Bronca.avif" alt="Portada Bronca" />
+              <div class="info-serie">
+                <h3><span>4</span> Bronca</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Sapiente, nihil.
+                </p>
+              </div>
+            </div>
+
+            <div class="serie-item">
+              <img
+                src="img/series/GambitoDeDama.avif"
+                alt="Portada Gambito de dama"
+              />
+              <div class="info-serie">
+                <h3><span>5</span> Gambito de dama</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Sapiente, nihil.
+                </p>
+              </div>
+            </div>
+
+            <div class="serie-item">
+              <img
+                src="img/series/BoJackHorseman.avif"
+                alt="Portada BoJack Horseman"
+              />
+              <div class="info-serie">
+                <h3><span>6</span> BoJack Horseman</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Sapiente, nihil.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="content-footer">
+        <div class="content-foo">
+          <h4>Informacion de Contacto</h4>
+          <p>Tel: 999999999</p>
+          <p>RevMovies@gmail.com</p>
+        </div>
+        <div class="content-foo">
+          <h4>Redes Sociales</h4>
+          <p>Instagram</p>
+          <p>Facebook</p>
+        </div>
+        <div class="content-foo">
+          <h4>Ubicacion</h4>
+          <p>Calle movie 99</p>
         </div>
       </div>
-    </section>
-
-  </main>
-  <footer>
-    <div class="content-footer">
-      <div class="content-foo">
-        <h4>Informacion de Contacto</h4>
-        <p>Tel: 999999999</p>
-        <p>RevMovies@gmail.com</p>
-      </div>
-       <div class="content-foo">
-        <h4>Redes Sociales</h4>
-        <p>Instagram</p>
-        <p>Facebook</p>
-      </div>
-       <div class="content-foo">
-        <h4>Ubicacion</h4>
-        <p>Calle movie 99</p>
-      </div>
-    </div>
-    <h2 class="credits">&copy; Kofitoto | Kofi Darko</h2>
-  </footer>
-</body>
-
+      <h2 class="credits">&copy; Kofitoto | Kofi Darko</h2>
+    </footer>
+    <div id="popupContainer"></div>
+    <div id="logInpopupContainer"></div>
+    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
+  </body>
 </html>

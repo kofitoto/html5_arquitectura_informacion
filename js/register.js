@@ -1,21 +1,18 @@
-/*function login() {
-  window.open('https://javascript.info')
-}*/
 document.addEventListener('DOMContentLoaded', () => {
-    const openPopupBtnLogin = document.getElementById('logInPopupBtn');
-    const popupContainerLogin = document.getElementById('logInpopupContainer'); // Un nuevo contenedor en el HTML principal
+    const openPopupBtn = document.getElementById('openPopupBtn');
+    const popupContainer = document.getElementById('popupContainer'); // Un nuevo contenedor en el HTML principal
     let registrationPopup = null; // Esta variable se asignará una vez que el pop-up se cargue
     let closePopupBtn = null;
 
     // Función para inicializar los manejadores de eventos
     function initializeEventListeners() {
-        if (openPopupBtnLogin && popupContainerLogin) {
-            openPopupBtnLogin.addEventListener('click', loadAndOpenPopup);
+        if (openPopupBtn && popupContainer) {
+            openPopupBtn.addEventListener('click', loadAndOpenPopup);
         } else {
-            console.error("Error: El botón de login o el contenedor del pop-up no fueron encontrados.");
-            if (openPopupBtnLogin) {
-                openPopupBtnLogin.disabled = true;
-                openPopupBtnLogin.textContent = "login no disponible";
+            console.error("Error: El botón de registro o el contenedor del pop-up no fueron encontrados.");
+            if (openPopupBtn) {
+                openPopupBtn.disabled = true;
+                openPopupBtn.textContent = "Registro no disponible";
             }
         }
     }
@@ -30,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Carga el contenido del pop-up desde el archivo externo
-            const response = await fetch('html/login_popUp.html'); // Asegúrate de que esta ruta sea correcta
+            const response = await fetch('html/registro_popUp.html'); // Asegúrate de que esta ruta sea correcta
             if (!response.ok) {
                 throw new Error(`Error HTTP: ${response.status}`);
             }
             const htmlContent = await response.text();
 
             // Inyecta el contenido en el contenedor del HTML principal
-            popupContainerLogin.innerHTML = htmlContent;
+            popupContainer.innerHTML = htmlContent;
 
             // Obtiene las referencias a los elementos del pop-up ahora que están en el DOM
             registrationPopup = document.getElementById('registrationPopup');
@@ -55,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             openPopup();
 
         } catch (error) {
-            console.error('Error al cargar o abrir el pop-up de login:', error);
-            alert('No se pudo cargar el formulario de login. Por favor, inténtelo de nuevo.');
+            console.error('Error al cargar o abrir el pop-up de registro:', error);
+            alert('No se pudo cargar el formulario de registro. Por favor, inténtelo de nuevo.');
         }
     }
 

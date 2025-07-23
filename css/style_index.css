@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contenedor {
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.titulo {
+  color: #642a73;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/*Header*/
+header {
+  width: 100%;
+  height: 600px;
+  background: #03001e;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fdeff9, hsla(316, 95%, 50%, 0.509), hsla(276, 97%, 38%, 0.648), #03001e), url(../img/fondoPeliculas.jpg);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fdeff9, hsla(316, 95%, 50%, 0.509), hsla(276, 97%, 38%, 0.648), #03001e), url(../img/fondoPeliculas.jpg);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+
+}
+
+
+nav { 
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+  padding: 50px 50px 0 0;
+}
+
+
+.navbar>a {
+  color: #ffffff;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+
+.navbar>a:hover {
+  text-decoration: underline;
+}
+
+.buttons>* {
+  border: none;
+  padding: 6px 6px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+}
+
+.iniciar-btn:hover{
+  background-color: #612e55;
+  transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+.registro-btn:hover{
+  background-color: #612e55;
+  transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+
+header .texto-peliculas-header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+
+}
+
+.texto-peliculas-header h1 {
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.texto-peliculas-header h2 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.film-wave {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+
+.contenedor-peliculas {
+  display: flex;
+  margin: 5%;
+  justify-content: space-evenly;
+}
+
+.imagen-ranking-peliculas {
+  display: flex;
+  width: 45%;
+  height: 45%;
+}
+
+.imagen-ranking-peliculas:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.contenido-texto-peliculas {
+  display: table-column;
+  width: 45%;
+  height: 45%;
+}
+
+.contenido-texto-peliculas h3 {
+  margin-bottom: 0px;
+}
+
+.contenido-texto-peliculas h3 span {
+  background: #4d0686;
+  color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+  margin-right: 5px;
+}
+
+.contenido-texto-peliculas p {
+  padding: 0px 0px 15px 15px;
+}
+
+footer {
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, .5);
+  background-color: rgb(108, 108, 233);
+  padding-bottom: 30px;
+}
+
+.content-footer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+footer h2 {
+  text-align: center;
+}
+
+.popup-overlay {
+    /* ¡CRUCIAL! Oculta el pop-up por defecto */
+    display: none;
+    position: fixed; /* Lo fija en la ventana, no se mueve con el scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Color negro con 60% de opacidad */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center;   /* Centra verticalmente el contenido */
+    z-index: 1000;         /* Asegura que esté por encima de otros elementos */
+}
+
+/* El contenido real del formulario dentro del pop-up */
+.popup-content {
+    background-color: #fff; /* Fondo blanco */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada */
+    width: 90%;
+    max-width: 450px; /* Un poco más ancho para mejor legibilidad */
+    position: relative; /* Para posicionar el botón de cerrar */
+    animation: fadeInScale 0.4s ease-out forwards; /* Animación de aparición */
+}
+
+/* Animación de aparición */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Título del formulario */
+.popup-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+    font-size: 26px;
+}
+
+.popup-content a {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Etiquetas de los campos */
+.popup-content label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Campos de entrada de texto, email, contraseña */
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content input[type="password"] {
+    width: calc(100%); /* Ancho completo menos padding y borde */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+.popup-content input[type="text"]:focus,
+.popup-content input[type="email"]:focus,
+.popup-content input[type="password"]:focus {
+    border-color: #007bff; /* Resalta el borde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado del navegador */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Botón de envío del formulario */
+.popup-content button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #be6baa; /* Verde para el botón de acción principal */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.popup-content button[type="submit"]:hover {
+    background-color: #612e55;
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+
+/* Botón para cerrar el pop-up (la 'X') */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 30px; /* Un poco más grande para ser fácil de clicar */
+    cursor: pointer;
+    color: #999; /* Color más suave */
+    transition: color 0.2s ease, transform 0.2s ease;
+    line-height: 1; /* Asegura que la 'x' se vea bien */
+}
+
+.close-btn:hover {
+    color: #333;
+    transform: rotate(90deg); /* Pequeña rotación al pasar el ratón */
+}
+
+/* --- CSS para la sección de Ranking de Series --- */
+
+/* Contenedor principal de la sección de series */
+.contenedor-nuestro-ranking-series {
+    /* Puedes añadir estilos específicos para esta sección si lo necesitas,
+       como un padding o margin superior/inferior diferente al de películas. */
+    padding: 40px 0;
+    text-align: center; /* Centra el título de la sección */
+}
+
+/* Título de la sección de ranking de series */
+.contenedor-nuestro-ranking-series .titulo {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Contenedor que envuelve el collage de series */
+.contenedor-series {
+    display: flex; /* Asegura que .collage-series ocupe su espacio */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* El contenedor del collage de series en sí */
+.collage-series {
+    display: grid;
+    /* Define columnas: 2 columnas iguales por defecto, se ajustarán */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Espacio entre las series */
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo del collage */
+    margin-top: 30px;
+    padding: 20px; /* Un poco de padding alrededor del collage */
+    background-color: #f8f8f8; /* Fondo suave para el collage */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cada elemento individual de la serie (tarjeta) */
+.serie-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.serie-item:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el ratón */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de la portada de la serie */
+.serie-item img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: 350px; /* Altura fija para uniformidad (ajusta si es necesario) */
+    object-fit: cover; /* Recorta la imagen para que cubra el espacio */
+    border-bottom: 1px solid #eee;
+}
+
+/* Contenedor de la información textual de la serie */
+.info-serie {
+    padding: 15px;
+    flex-grow: 1; /* Permite que la info crezca y ocupe espacio si hay diferencias de texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el párrafo hacia abajo si el h3 es más corto */
+}
+
+/* Título de la serie */
+.info-serie h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* El número de ranking dentro del título */
+.info-serie h3 span {
+    font-size: 0.8em; /* Tamaño más pequeño para el número de ranking */
+    background-color: #007bff; /* Color de fondo para el número */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    display: inline-block; /* Para que el padding y margen funcionen bien */
+}
+
+/* Descripción/párrafo de la serie */
+.info-serie p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* --- Adaptación Responsiva para Series (Opcional, pero muy recomendado) --- */
+@media (max-width: 768px) {
+    .collage-series {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas más pequeñas en móviles */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .serie-item img {
+        height: 300px; /* Altura de imagen ajustada para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .collage-series {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .serie-item img {
+        height: 250px; /* Altura de imagen ajustada para móviles muy pequeños */
+    }
+}
